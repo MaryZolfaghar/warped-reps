@@ -3,6 +3,7 @@ import torch
 import pickle
 import random
 import numpy as np 
+import os
 
 from data import get_loaders
 from models import get_model
@@ -100,10 +101,14 @@ def main(args):
     # Save results
     data = {'results': results,
             'analysis': analysis}
-    out_path = '../results/'+args.out_file
+    out_path = '../results/'                                        
     print("Saving results to {}".format(out_path))
-    with open(out_path, 'wb') as f:
+    if not(os.path.exists(out_path)):
+        print("Folder {} does not exist and will be created".format(out_path))
+        os.mkdir(out_path)
+    with open(out_path+args.out_file, 'wb') as f:
         pickle.dump(data, f)
+
 
 if __name__ == '__main__':
     args = parser.parse_args()
