@@ -26,19 +26,17 @@ This directory contains the following:
 - PyTorch
 - [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation.
 	You can install them together at [pytorch.org](https://pytorch.org/get-started/locally/) to make sure of this.
-- 
-- statsmodels: `pip install statsmodels`
-- sklearn: `pip install -U scikit-learn`
+- install requirements by `pip install -r requirements.txt` or  install the packages separately using 
+	- statsmodels: `pip install statsmodels`
+	- sklearn: `pip install -U scikit-learn`
 
 
 ## Train and test the model
 To train and test the model with the default parameters:
-
 ```bash
 python main.py
 ```
-This will train the model and produce ...
-
+This will train and test the model and produce analysis results and save in the `../results/` directory. 
 
 
 ## Usage
